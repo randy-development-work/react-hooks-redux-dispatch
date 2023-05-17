@@ -10,4 +10,15 @@ function changeState(state, action) {
 let state = { count: 0 };
 let action = { type: "counter/increment" };
 
-changeState(state, action);
+function render() {
+  document.body.textContent = state.count;
+}
+function dispatch(action) {
+  state = changeState(state, action);
+  render();
+}
+
+render();
+// dispatch({ type: "counter/increment" });
+// dispatch({type: "counter/increment"});
+
